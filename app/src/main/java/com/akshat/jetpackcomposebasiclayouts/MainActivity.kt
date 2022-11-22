@@ -5,9 +5,15 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.akshat.jetpackcomposebasiclayouts.ui.theme.JetPackComposeBasicLayoutsTheme
@@ -25,18 +31,37 @@ class MainActivity : ComponentActivity() {
 fun SearchBar(
     modifier: Modifier = Modifier
 ) {
-    // Implement composable here
+    TextField(
+        value = "" ,
+        onValueChange = {},
+        leadingIcon = {
+            Icon(
+                imageVector = Icons.Default.Search,
+                contentDescription = null
+            )
+        },
+        colors = TextFieldDefaults.textFieldColors(
+            backgroundColor = MaterialTheme.colors.surface
+        ),
+        placeholder = {
+            Text(stringResource(R.string.placeholder_search))
+        },
+        modifier = modifier
+            .fillMaxWidth()
+            .heightIn(min = 56.dp)
+    )
 }
 
 // Step: Align your body - Alignment
-@Composable
+/*@Composable
 fun AlignYourBodyElement(
     modifier: Modifier = Modifier
 ) {
     // Implement composable here
-}
+}*/
 
 
+/*
 // Step: Favorite collection card - Material Surface
 @Composable
 fun FavoriteCollectionCard(
@@ -44,43 +69,46 @@ fun FavoriteCollectionCard(
 ) {
     // Implement composable here
 }
+*/
 
 // Step: Align your body row - Arrangements
-@Composable
+/*@Composable
 fun AlignYourBodyRow(
     modifier: Modifier = Modifier
 ) {
     // Implement composable here
-}
+}*/
 
-@Composable
+/*@Composable
 fun FavoriteCollectionsGrid(
     modifier: Modifier = Modifier
 ) {
     // Implement composable here
-}
+}*/
 
 // Step: Home section - Slot APIs
+/*
 @Composable
 fun HomeSection(
     modifier: Modifier = Modifier
 ) {
     // Implement composable here
 }
+*/
 
 // Step: Home screen - Scrolling
-@Composable
+/*@Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
     // Implement composable here
-}
+}*/
 
 // Step: Bottom navigation - Material
-@Composable
+/*@Composable
 private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
     // Implement composable here
-}
+}*/
 
-// Step: MySoothe App - Scaffold
+// Step: MySoothe App
 @Composable
 fun MySootheApp() {
     // Implement composable here
@@ -115,7 +143,7 @@ fun SearchBarPreview() {
     JetPackComposeBasicLayoutsTheme { SearchBar(Modifier.padding(8.dp)) }
 }
 
-@Preview(showBackground = true, backgroundColor = 0xFFF0EAE2)
+/*@Preview(showBackground = true, backgroundColor = 0xFFF0EAE2)
 @Composable
 fun AlignYourBodyElementPreview() {
     JetPackComposeBasicLayoutsTheme {
@@ -163,7 +191,7 @@ fun ScreenContentPreview() {
 @Composable
 fun BottomNavigationPreview() {
     JetPackComposeBasicLayoutsTheme { SootheBottomNavigation(Modifier.padding(top = 24.dp)) }
-}
+}*/
 
 @Preview(widthDp = 360, heightDp = 640)
 @Composable
